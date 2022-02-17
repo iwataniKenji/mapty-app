@@ -303,11 +303,11 @@ class App {
     this.#workouts.forEach(work => {
       this._renderWorkout(work); // renderiza todos os workouts guardados
     })
+  }
 
-    reset() {
-      localStorage.removeItem('workouts');
-      location.reload();
-    }
+  reset() {
+    localStorage.removeItem('workouts');
+    location.reload();
   }
 }
 
