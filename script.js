@@ -78,7 +78,13 @@ class App {
   #workouts = [];
 
   constructor() {
+    // get user's position
     this._getPosition(); // page loads -> create new object -> get position
+
+    // get data from local storage
+    this._getLocalStorage();
+
+    // attach event handlers
     form.addEventListener('submit', this._newWorkout.bind(this));
     inputType.addEventListener('change', this._toggleElevationField);
     containerWorkouts.addEventListener('click', this._moveToPopup.bind(this));
@@ -97,7 +103,6 @@ class App {
   _loadMap(position) {
     const { latitude } = position.coords;
     const { longitude } = position.coords;
-    console.log(`https://www.google.com.br/maps/@${latitude},${longitude}`);
 
     const coords = [latitude, longitude];
 
@@ -110,6 +115,10 @@ class App {
 
     // handling clicks on map
     this.#map.on('click', this._showForm.bind(this));
+
+    this.#workouts.forEach(work => {
+      this._renderWorkoutMarker(work);
+    })
   }
 
   _showForm(mapE) {
@@ -177,7 +186,6 @@ class App {
 
     // add new object to workout array
     this.#workouts.push(workout);
-    console.log(workout);
 
     // render workout on map as marker
     this._renderWorkoutMarker(workout);
@@ -267,7 +275,7 @@ class App {
 
     const workout = this.#workouts.find(
       work => work.id === workoutEl.dataset.id
-    ); 
+    );
 
     this.#map.setView(workout.coords, this.#mapZoomLevel, {
       animate: true,
@@ -277,11 +285,24 @@ class App {
     });
 
     // using the public interface
-    workout.click();
+    // workout.click();
   }
 
   _setLocalStorage() {
-    localStorage.setItem('workouts', JSON.stringify(this.#workouts)) // 1 - nome; 2 - string que será associada a key  
+    localStorage.setItem('workouts', JSON.stringify(this.#workouts)); // 1 - nome; 2 - string que será associada a key
+  }
+
+  _getLocalStorage() {
+    const data = JSON.parse(localStorage.getItem('workouts'));
+    console.log(data);
+
+    if (!data) return;
+
+    this.#workouts = data; // restaurando dados guardados
+
+    this.#workouts.forEach(work => {
+      this._renderWorkout(work); // renderiza todos os workouts guardados
+    })
   }
 }
 
