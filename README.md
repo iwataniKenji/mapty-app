@@ -1,6 +1,5 @@
 <section align="center">
-    <img style="z-index: 1; position: absolute" width="366px" src="logo.png" />
-    <img style="z-index: 0" width="366px" src="logo-background.png" />
+    <img width="366px" src="logo-background.png" />
 </section>
 
 ---
