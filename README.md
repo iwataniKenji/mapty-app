@@ -33,7 +33,7 @@
 - [x] Local storage functionality
 
 <section align="center">
-    <img alt="Mapty website overview" src="#"/>
+    <img alt="Mapty website overview" src="mapty.gif"/>
 </section>
 
 ---
