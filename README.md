@@ -13,13 +13,16 @@
 </p>
 
 <h4 align="center">
-   ⚠️ MAPTY project under construction ⚠️
+    ✔️ MAPTY project finished ✔️
 </h4>
 
 <H2 id="about">📙 About</H2>
 
 <p>Mapty is an application that uses geolocation API to map your workouts, tracking the specific location, distance, duration, cadence and even the elevation gain</p>
 <p>Originally created by Jonas Schmedtmann and made by Kenji Iwatani</p>
+<p>
+    <a href="https://mapty-kenji.netlify.app/">Check website &rarr;</a>
+</p>
 
 ---
 
@@ -44,3 +47,5 @@
 - [x] CSS
 - [x] JavaScript
 - [x] Leaflet Library
+- [x] Netlify
+
