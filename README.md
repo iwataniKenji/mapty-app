@@ -21,7 +21,7 @@
 <p>Mapty is an application that uses geolocation API to map your workouts, tracking the specific location, distance, duration, cadence and even the elevation gain</p>
 <p>Originally created by <a href="https://github.com/jonasschmedtmann">Jonas Schmedtmann<a/> and made by Kenji Iwatani</p>
 <p>
-    <a href="https://mapty-kenji.netlify.app/">Check website &rarr;</a>
+    <h3><a href="https://mapty-kenji.netlify.app/">Check website &rarr;</a></h3>
 </p>
 
 ---
